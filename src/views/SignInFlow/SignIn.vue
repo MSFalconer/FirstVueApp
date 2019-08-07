@@ -1,31 +1,37 @@
 <template>
   <div
     class="Container"
-    :class="{'light-background' : !isDarkMode, 'dark-background' : isDarkMode}"
+    :class="{ 'light-background': !isDarkMode, 'dark-background': isDarkMode }"
   >
-    <div class="request" :class="{'light-request' : isDarkMode, 'dark-request' : !isDarkMode}">
+    <div
+      class="request"
+      :class="{ 'light-request': isDarkMode, 'dark-request': !isDarkMode }"
+    >
       Don't have a Inevitable account?
       <router-link to="/request">Request an account</router-link>
     </div>
     <div class="login">
       <img src="@/assets/logo.png" v-show="isDarkMode" />
       <img src="@/assets/logo.png" v-show="!isDarkMode" />
-      <h4 :class="{'light-text' : isDarkMode, 'dark-text' : !isDarkMode}">Sign into Inevitable</h4>
+      <h4 :class="{ 'light-text': isDarkMode, 'dark-text': !isDarkMode }">
+        Sign into Inevitable
+      </h4>
       <input
         type="email"
         placeholder="Email"
-        :class="{'light-field' : isDarkMode, 'dark-field' : !isDarkMode}"
+        :class="{ 'light-field': isDarkMode, 'dark-field': !isDarkMode }"
       />
       <input
         type="password"
         placeholder="Password"
-        :class="{'light-field' : isDarkMode, 'dark-field' : !isDarkMode}"
+        :class="{ 'light-field': isDarkMode, 'dark-field': !isDarkMode }"
       />
       <button>Sign In</button>
       <router-link
         to="/recover"
-        :class="{'light-link': isDarkMode, 'dark-link' : !isDarkMode}"
-      >Forgot your password?</router-link>
+        :class="{ 'light-link': isDarkMode, 'dark-link': !isDarkMode }"
+        >Forgot your password?</router-link
+      >
       <h4 class="light-text" v-if="isDarkMode">dark mode</h4>
       <h4 class="dark-text" v-if="!isDarkMode">light mode</h4>
       <button @click="toggleDarkMode">Toggle</button>
@@ -165,4 +171,4 @@ a {
   color: rgba(255, 255, 255, 0.3);
   text-decoration: none;
 }
-</style> 
+</style>
