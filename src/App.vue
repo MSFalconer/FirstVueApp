@@ -4,6 +4,7 @@
   </div>
 </template>
 <script>
+import "animate.css";
 export default {
   name: "App",
   mounted() {
@@ -15,6 +16,10 @@ export default {
 <style lang="scss">
 @import "@/global-styles/colors.scss";
 @import "@/global-styles/typography.scss";
+
+* {
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
 body {
   background-color: $dark-blue;
 }
@@ -22,8 +27,8 @@ body {
   font-family: $system-font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: $white;
+  text-align: center;
 }
 #nav {
   padding: 30px;
@@ -41,5 +46,48 @@ h1 {
 
 p {
   @include large-text-bold($purple);
+}
+
+/* THEME */
+.light-background {
+  background-color: $light-gray;
+}
+
+.dark-background {
+  background-color: $dark-blue;
+}
+
+.light-text {
+  color: $white;
+}
+
+.dark-text {
+  color: $black;
+}
+
+.light-field {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.dark-field {
+  background: rgba(198, 208, 235, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.light-link {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.dark-link {
+  color: rgba(0, 0, 0, 0.3);
 }
 </style>
